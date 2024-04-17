@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block container %}
+<h2>Update</h2>
+<p>Edit book information in a MongoDB database collection.</p>
+<form method="POST" action="{{ url_for('edit_post', mongoid=mongoid) }}">
+  <p>
+    Student Name:
+    <input type="text" id="fname" name="fname" value="{{doc.fname}}" /><br />
+  </p>
+  <p>
+    Student ID:
+    <input type="text" id="stid" name="stid" value="{{doc.stid}}" /><br />
+  </p>
+  <p>
+    Book Name:
+    <input type="text" id="bkname" name="bkname" value="{{doc.bkname}}" /><br />
+  </p>
+  <p>
+    Borrowing State:
+    <input type="text" id="book_action" name="book_action" value="{{doc.book_action}}" /><br />
+  </p>
+  <p>
+    <a href="{{ url_for('read')}}">Cancel</a>
+    <input type="submit" name="post-btn" value="Save" />
+  </p>
+</form>
+{% endblock %}
